@@ -4,25 +4,41 @@ void checkWinner() {
   
   // check rows for same shape repeating thrice
   for (int start = 0; start < gridSize; start++) {
-    if (board[start][0] != 0 && board[start][0] == board[start][1] && board[start][1] == board[start][2]) {
-      winner = board[start][0];
+    if (board[start][0] != 0) {
+      if(board[start][0] == board[start][1]) {
+        if(board[start][1] == board[start][2]) {
+          winner = board[start][0];
+        }
+      }
     }
   }
   
   // check columns for same shape repeating thrice
-  for (int begin = 0; begin < gridSize; begin++) {
-    if (board[0][begin] != 0 && board[0][begin] == board[1][begin] && board[1][begin] == board[2][begin]) {
-      winner = board[0][begin];
+  for (int startPoint = 0; startPoint < gridSize; startPoint++) {
+    if (board[0][startPoint] != 0) {
+      if(board[0][startPoint] == board[1][startPoint]){
+        if(board[1][startPoint] == board[2][startPoint]){
+            winner = board[0][startPoint];
+        }
+      }
     }
   }
   
   // check diagonals for the same shape repeated three times
-  if (board[0][0] != 0 && board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
-    winner = board[0][0];
+  if (board[0][0] != 0) {
+    if(board[0][0] == board[1][1]) {
+      if(board[1][1] == board[2][2]) {
+        winner = board[0][0];
+      }
+    }
   } 
   
-  else if (board[0][2] != 0 && board[0][2] == board[1][1] && board[1][1] == board[2][0]) {
-    winner = board[0][2];
+  else if (board[0][2] != 0) {
+    if(board[0][2] == board[1][1]) {
+      if(board[1][1] == board[2][0]) {
+        winner = board[0][2];
+      }
+    }
   }
   
   //displays winner
